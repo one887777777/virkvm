@@ -4,34 +4,7 @@
 2、kvm虚拟机删除<br>
 
 ## 脚本创建
-
-## 手工创建
-virt-sysprep -a centos-6.8-baseimage.qcow2
-
-/usr/bin/qemu-img create -F qcow2 -b /home/system/centos-6.8-baseimage.qcow2 -f qcow2 /home/system/10_10_10_152.qcow2
-
-virsh define /tmp/10_10_10_152.xml
-
-vmname=`echo "10_10_10_152"`
-ipaddres=`echo "10.10.10.152"`
-echo 'DEVICE="eth0"
-BOOTPROTO="static"
-IPADDR='$ipaddres'
-NETMASK=255.255.255.0
-ONBOOT="yes"
-TYPE="Ethernet"
-GATEWAY="10.10.10.1" ' > /tmp/ifcfg-eth0-$vmname
-echo 'NETWORKING=yes
-HOSTNAME=datanode2' > /tmp/network-$vmname
-echo 'options timeout:1 attempts:1 rotate
-nameserver 10.202.72.116
-nameserver 10.202.72.118' > /tmp/resolv.conf-$vmname
-guestfish --rw -a /home/system/$vmname.qcow2 -i << EOF
-upload /tmp/ifcfg-eth0-$vmname /etc/sysconfig/network-scripts/ifcfg-eth0
-upload /tmp/network-$vmname /etc/sysconfig/network
-upload /tmp/resolv.conf-$vmname /etc/resolv.conf
-EOF
-
+<code>sh install.sh -f 10.10.10.160 -t 10.10.10.161 -c 2 -m 2048 -d 20 -i /data/system</code>
 
 ## 版权声明
 * 除特别说明外，本博客内容皆为原创，可以自由转载传播，但请署名及注明出处，不尊重别人劳动成果的不欢迎；

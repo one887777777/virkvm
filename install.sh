@@ -83,5 +83,3 @@ virkvm(){
 public
 virkvm
 
-
-#update_ip '10_10_10_158' '/data/system' '10.10.10.158'

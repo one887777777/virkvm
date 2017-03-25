@@ -4,7 +4,14 @@
 2、kvm虚拟机删除<br>
 
 ## 脚本创建
-<code>sh install.sh -f 10.10.10.160 -t 10.10.10.161 -c 2 -m 2048 -d 20 -i /data/system</code>
+<code>sh install.sh -f 10.10.10.161 -t 10.10.10.161 -c 2 -m 2048 -d 20 -i /data/system</code>
+```
+defult:
+cpunum=2
+memorysize=2048M
+installpath=/data/system
+disksize=20 G
+```
 
 ## 版权声明
 * 除特别说明外，本博客内容皆为原创，可以自由转载传播，但请署名及注明出处，不尊重别人劳动成果的不欢迎；

@@ -115,14 +115,14 @@ vmname=$1
 path=$2
 ip=$3
 pattern01="192.168.1.[0-9]{1,3}"
-pattern70="192.168.70.[0-9]{1,3}"
+pattern70="192.168.0.[0-9]{1,3}"
 pattern10="10.10.10.[0-9]{1,3}"
 if [[ $ip =~ ${pattern01} ]];then
     gateway='192.168.1.1'
     netmask='255.255.0.0'
     echo -e "options timeout:1 attempts:1 rotate \nnameserver 192.168.2.125" >/tmp/resolv.conf-$vmname
 elif [[ $ip =~ ${pattern70} ]];then
-    gateway='192.168.70.1'
+    gateway='192.168.0.1'
     netmask='255.255.255.0'
     echo -e "options timeout:1 attempts:1 rotate \nnameserver 192.168.2.125" >/tmp/resolv.conf-$vmname
 elif [[ $ip =~ ${pattern10} ]];then

@@ -16,7 +16,7 @@ load_config(){
 #help help help
 help(){
 	echo "use $0 -f fromip -t toip [ -c cpunum] [ -m memorysize] [ -d disksize] [ -i installpath]
-	sh $0 -f 10.10.10.160 -t 10.10.10.161 -c 2 -m 2048 -d 20 -i /data/system
+	sh $0 -f 192.168.0.8 -t 192.168.0.8 -c 2 -m 2048 -d 20 -i /data/system
 	defult:
 	cpunum=${cpunum}
 	memorysize=$(expr $memorysize / 1024 )M

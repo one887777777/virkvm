@@ -4,7 +4,7 @@
 2、kvm虚拟机删除<br>
 
 ## 脚本创建
-<code>sh install.sh -f 10.10.10.161 -t 10.10.10.161 -c 2 -m 2048 -d 20 -i /data/system</code>
+<code>sh install.sh -f 192.168.0.8 -t 192.168.0.8 -c 2 -m 4096 -d 20 -i /data/system</code>
 ```
 defult:
 cpunum=2
